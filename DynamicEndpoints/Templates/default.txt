@@ -1,0 +1,15 @@
+using Microsoft.AspNetCore.Mvc;
+
+namespace DynamicEndpoints.Controllers
+{
+    [ApiController]
+    [Route("{ControllerRoute}")]
+    public class {ControllerName}Controller : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult Get()
+        {
+            {Code}
+        }
+    }
+}
