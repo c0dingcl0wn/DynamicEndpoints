@@ -72,9 +72,17 @@ public static class AssemblyProvider
         }
 
         // replace placeholders in template
-        var code =  content.Replace("{ControllerName}", generationOptions.ControllerName)
-                                .Replace("{ControllerRoute}", generationOptions.ControllerRoute)
-                                .Replace("{Code}", generationOptions.Code);
+        var code =  content.Replace("{ControllerName}", generationOptions.ControllerName).Replace("{Code}", generationOptions.Code);
         return code;
+    }
+
+    public static List<Assembly> GetAllGeneratedAssemblies()
+    {
+        var assemblies = new List<Assembly>();
+        Directory.GetFiles("GeneratedAssemblies/", "*.dll").ToList().ForEach(file =>
+        {
+            assemblies.Add(Assembly.LoadFrom(file));
+        });
+        return assemblies;
     }
 }
