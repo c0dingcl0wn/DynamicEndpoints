@@ -2,6 +2,15 @@
 This repository provides a proof of concept on how to dynamically "generate" code, 
 compile it and add a new endpoint to an MVC web application on the fly. 
 
+> __Disclaimer__: This code is not suited for any kind of system with public access. 
+> It currently allows anyone who has access to the endpoint to insert and execute any arbitrary piece of code. 
+> I recommend only running this on localhost.
+> 
+> I will not take responsibility for whatever you do with this code! 
+> 
+> Please remember law #4 of the [10 immutable laws of security](https://www.marshall.edu/it/departments/information-security/10-immutable-laws-of-security/#:~:text=Law%20%231%3A%20If%20a%20bad,it's%20not%20your%20computer%20anymore)
+
+
 ## Getting started
 This project runs on .net6.0. Make sure you have a sdk and a runtime installed. 
 Then, either build and start the application in your favourite IDE, or from the command line with:
