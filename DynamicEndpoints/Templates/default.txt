@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DynamicEndpoints.Controllers
 {
     [ApiController]
-    [Route("{ControllerRoute}")]
+    [Route("/custom/{ControllerName}")]
     public class {ControllerName}Controller : ControllerBase
     {
         [HttpGet]

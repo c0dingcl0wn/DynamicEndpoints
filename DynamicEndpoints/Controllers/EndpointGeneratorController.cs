@@ -33,6 +33,6 @@ namespace DynamicEndpoints.Controllers;
             ActionDescriptorChangeProvider.Instance.HasChanged = true;
             ActionDescriptorChangeProvider.Instance.TokenSource.Cancel();
         
-            return Ok($"Created {generationOptions.ControllerName}\nNavigate to {generationOptions.ControllerRoute} to see it in action.");        
+            return Ok($"Created {generationOptions.ControllerName}\nNavigate to custom/{generationOptions.ControllerName} to see it in action.");        
         }
     }
