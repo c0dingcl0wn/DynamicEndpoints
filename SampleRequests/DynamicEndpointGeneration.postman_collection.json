@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "b09b13a2-5d62-4e22-9a83-a4b70bc2a44b",
+		"name": "DynamicEndpointGeneration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create new endpoint",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ControllerName\": \"PrintYay\",\n  \"Code\": \"var result = \\\"\\\";\\nfor(var x = 0; x<11; x++){result += $\\\"{x}: Yay\\\\n\\\";}\\nreturn Ok(result);\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}:{{port}}/EndpointGenerator",
+					"host": [
+						"{{base_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"EndpointGenerator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call new endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}:{{port}}/custom/PrintYay",
+					"host": [
+						"{{base_url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"custom",
+						"PrintYay"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
